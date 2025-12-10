@@ -53,15 +53,32 @@ class Lobby(SQLModel, table=True):
 # DATABASE ENGINE & SESSION
 # ============================================================================
 
-# SQLite database file
-DATABASE_URL = "sqlite:///./groupie.db"
+import os
 
-# Create engine with SQLite-specific settings
-engine = create_engine(
-    DATABASE_URL, 
-    echo=True,  # Log SQL queries (disable in production)
-    connect_args={"check_same_thread": False}  # Required for SQLite with FastAPI
-)
+# Get database URL from environment (Render/Neon) or default to SQLite (local)
+DATABASE_URL = os.environ.get("DATABASE_URL")
+
+if DATABASE_URL:
+    # Production: Use PostgreSQL (Neon)
+    # Fix for Render/Heroku: they provide postgres:// but SQLAlchemy needs postgresql://
+    if DATABASE_URL.startswith("postgres://"):
+        DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
+    
+    engine = create_engine(
+        DATABASE_URL,
+        echo=False,  # Disable SQL logging in production
+        pool_pre_ping=True,  # Verify connections before using
+    )
+    print(f"🐘 Using PostgreSQL database")
+else:
+    # Local development: Use SQLite
+    DATABASE_URL = "sqlite:///./groupie.db"
+    engine = create_engine(
+        DATABASE_URL,
+        echo=True,  # Log SQL queries for debugging
+        connect_args={"check_same_thread": False}  # Required for SQLite with FastAPI
+    )
+    print(f"🗄️ Using SQLite database (local development)")
 
 
 def create_db_and_tables():

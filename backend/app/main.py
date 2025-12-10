@@ -51,14 +51,18 @@ app.include_router(merchant.router)
 @app.get("/")
 async def root():
     """Health check endpoint."""
-    return {"status": "healthy", "service": "Groupie API", "database": "SQLite"}
+    import os
+    db_type = "PostgreSQL" if os.environ.get("DATABASE_URL") else "SQLite"
+    return {"status": "healthy", "service": "Groupie API", "database": db_type}
 
 
 @app.get("/health")
 async def health_check():
     """Detailed health check."""
+    import os
+    db_type = "PostgreSQL (Neon)" if os.environ.get("DATABASE_URL") else "SQLite (groupie.db)"
     return {
         "status": "healthy",
         "version": "0.2.0",
-        "database": "SQLite (groupie.db)",
+        "database": db_type,
     }
