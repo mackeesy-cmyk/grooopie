@@ -1,0 +1,22 @@
+{
+    "name": "groupie",
+    "version": "0.1.0",
+    "description": "Group Discount & Social Booking Platform",
+    "private": true,
+    "workspaces": [
+        "frontend",
+        "backend"
+    ],
+    "scripts": {
+        "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+        "dev:frontend": "cd frontend && npm run dev",
+        "dev:backend": "cd backend && uvicorn app.main:app --reload --port 8000",
+        "build:frontend": "cd frontend && npm run build",
+        "lint": "cd frontend && npm run lint",
+        "db:migrate": "cd backend && alembic upgrade head",
+        "db:rollback": "cd backend && alembic downgrade -1"
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    }
+}

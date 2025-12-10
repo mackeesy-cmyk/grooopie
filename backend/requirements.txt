@@ -1,0 +1,16 @@
+# Groupie API Dependencies
+
+# Web framework
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+
+# Database
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.9
+alembic>=1.12.0
+
+# Validation
+pydantic>=2.5.0
+
+# Utilities
+python-dotenv>=1.0.0

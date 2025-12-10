@@ -1,0 +1,151 @@
+{
+    "lobby": {
+        "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+        "name": "Weekend Escape Room Squad",
+        "description": "Looking for adventurous people to crack the mystery!",
+        "status": "open",
+        "is_public": true,
+        "invite_code": "ESCAPE2024",
+        "created_at": "2025-12-08T14:30:00Z",
+        "booking_deadline": "2025-12-14T18:00:00Z"
+    },
+    "activity": {
+        "id": "f1e2d3c4-b5a6-7890-1234-567890abcdef",
+        "name": "The Haunted Mansion - Escape Room",
+        "description": "Can you escape the haunted mansion in 60 minutes?",
+        "category": "escape_room",
+        "location_name": "Mystery Rooms Stockholm",
+        "address": "Drottninggatan 45",
+        "city": "Stockholm",
+        "duration_minutes": 60,
+        "image_url": "https://example.com/images/haunted-mansion.jpg",
+        "min_participants": 2,
+        "max_participants": 8
+    },
+    "time_slot": {
+        "id": "12345678-abcd-ef12-3456-7890abcdef12",
+        "start_time": "2025-12-15T14:00:00Z",
+        "end_time": "2025-12-15T15:00:00Z"
+    },
+    "members": {
+        "current_count": 4,
+        "max_capacity": 8,
+        "spots_remaining": 4,
+        "list": [
+            {
+                "id": "m1-uuid",
+                "user": {
+                    "id": "user-1-uuid",
+                    "first_name": "Erik",
+                    "last_name": "S.",
+                    "avatar_url": "https://example.com/avatars/erik.jpg"
+                },
+                "is_creator": true,
+                "spots_reserved": 1,
+                "status": "confirmed",
+                "joined_at": "2025-12-08T14:30:00Z"
+            },
+            {
+                "id": "m2-uuid",
+                "user": {
+                    "id": "user-2-uuid",
+                    "first_name": "Anna",
+                    "last_name": "L.",
+                    "avatar_url": "https://example.com/avatars/anna.jpg"
+                },
+                "is_creator": false,
+                "spots_reserved": 2,
+                "status": "confirmed",
+                "joined_at": "2025-12-08T15:45:00Z"
+            },
+            {
+                "id": "m3-uuid",
+                "user": {
+                    "id": "user-3-uuid",
+                    "first_name": "Marcus",
+                    "last_name": "B.",
+                    "avatar_url": null
+                },
+                "is_creator": false,
+                "spots_reserved": 1,
+                "status": "pending",
+                "joined_at": "2025-12-08T16:20:00Z"
+            }
+        ]
+    },
+    "pricing": {
+        "currency": "SEK",
+        "base_price_per_person": 349.00,
+        "current_price_per_person": 314.10,
+        "current_discount_percentage": 10,
+        "total_savings_per_person": 34.90
+    },
+    "discount_tiers": {
+        "current_tier_index": 1,
+        "tiers": [
+            {
+                "min_participants": 2,
+                "max_participants": 3,
+                "discount_percentage": 0,
+                "price_per_person": 349.00,
+                "tier_name": "Duo",
+                "is_current": false,
+                "is_unlocked": true
+            },
+            {
+                "min_participants": 4,
+                "max_participants": 5,
+                "discount_percentage": 10,
+                "price_per_person": 314.10,
+                "tier_name": "Squad",
+                "is_current": true,
+                "is_unlocked": true
+            },
+            {
+                "min_participants": 6,
+                "max_participants": 7,
+                "discount_percentage": 20,
+                "price_per_person": 279.20,
+                "tier_name": "Crew",
+                "is_current": false,
+                "is_unlocked": false,
+                "members_needed": 2
+            },
+            {
+                "min_participants": 8,
+                "max_participants": 8,
+                "discount_percentage": 30,
+                "price_per_person": 244.30,
+                "tier_name": "Full House",
+                "is_current": false,
+                "is_unlocked": false,
+                "members_needed": 4
+            }
+        ],
+        "next_tier": {
+            "tier_name": "Crew",
+            "discount_percentage": 20,
+            "price_per_person": 279.20,
+            "members_needed": 2,
+            "potential_savings": 34.90
+        }
+    },
+    "countdown": {
+        "booking_deadline": "2025-12-14T18:00:00Z",
+        "time_remaining_seconds": 523200,
+        "time_remaining_formatted": "6d 1h 27m",
+        "activity_starts_in_seconds": 609600,
+        "activity_starts_formatted": "7d 1h 27m",
+        "is_urgent": false
+    },
+    "user_context": {
+        "is_member": false,
+        "is_creator": false,
+        "can_join": true,
+        "membership": null
+    },
+    "share": {
+        "invite_url": "https://groupie.app/join/ESCAPE2024",
+        "deep_link": "groupie://lobby/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+    }
+}
