@@ -679,7 +679,7 @@ export default function LobbyPage() {
                 businessName={business?.name}
                 isLoggedIn={isAuthenticated}
                 userName={user?.name}
-                onJoinSuccess={(_name) => {
+                onJoinSuccess={() => {
                     setHasJoined(true);
                     // Refetch lobby data to get updated members list
                     fetchLobbyData();
