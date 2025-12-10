@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/context/AuthContext';
 import BottomNav from '@/components/BottomNav';
+import { API_BASE_URL } from '@/config';
 
 // ============================================================================
 // Design Tokens
@@ -146,7 +147,7 @@ const Navbar: React.FC = () => {
 
         const validateLobby = async (code: string) => {
             try {
-                const response = await fetch(`http://localhost:8000/lobbies/${code}`);
+                const response = await fetch(`${API_BASE_URL}/lobbies/${code}`);
                 if (!response.ok) {
                     // Lobby doesn't exist - silently clear localStorage
                     localStorage.removeItem('groupie_active_lobby');
@@ -260,7 +261,7 @@ const Navbar: React.FC = () => {
                                     }
 
                                     try {
-                                        const response = await fetch('http://localhost:8000/lobbies', {
+                                        const response = await fetch(`${API_BASE_URL}/lobbies`, {
                                             method: 'POST',
                                             headers: { 'Content-Type': 'application/json' },
                                             body: JSON.stringify({ leader_name: user.name }),
