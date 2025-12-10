@@ -11,16 +11,17 @@ import { API_BASE_URL } from '@/config';
 // Design Tokens
 // ============================================================================
 
-const COLORS = {
-    coral: '#FF6B5B',
-    coralDark: '#E85A4A',
-    coralLight: '#FFE8E5',
-    teal: '#14B8A6',
-    tealDark: '#0D9488',
-    tealLight: '#CCFBF1',
-    warmWhite: '#FFFAF8',
-    warmGray: '#6B7280',
-};
+// Design tokens - available for future use
+// const COLORS = {
+//     coral: '#FF6B5B',
+//     coralDark: '#E85A4A',
+//     coralLight: '#FFE8E5',
+//     teal: '#14B8A6',
+//     tealDark: '#0D9488',
+//     tealLight: '#CCFBF1',
+//     warmWhite: '#FFFAF8',
+//     warmGray: '#6B7280',
+// };
 
 // ============================================================================
 // Typer
@@ -136,7 +137,8 @@ const FEATURED_DEALS: Deal[] = [
 const Navbar: React.FC = () => {
     const { user, isAuthenticated, logout } = useAuth();
     const router = useRouter();
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    // Menu state - for future mobile menu implementation
+    // const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeLobbyCode, setActiveLobbyCode] = useState<string | null>(null);
     const [isValidLobby, setIsValidLobby] = useState(false);
     const [hasMounted, setHasMounted] = useState(false);

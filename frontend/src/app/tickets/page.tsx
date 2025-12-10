@@ -6,7 +6,8 @@ import { useRouter } from 'next/navigation';
 import { useAuth } from '@/context/AuthContext';
 import ConfirmedTicket from '@/components/ConfirmedTicket';
 import BottomNav from '@/components/BottomNav';
-import { getBusinessById } from '@/data/businesses';
+// Business lookup moved to API - keep for future use
+// import { getBusinessById } from '@/data/businesses';
 
 // ============================================================================
 // Typer
@@ -227,7 +228,7 @@ const EmptyState: React.FC = () => {
 
 export default function TicketsPage() {
     const router = useRouter();
-    const { user, isAuthenticated, isLoading: authLoading } = useAuth();
+    const { isAuthenticated, isLoading: authLoading } = useAuth();
     const [tickets, setTickets] = useState<Ticket[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [selectedTicket, setSelectedTicket] = useState<Ticket | null>(null);

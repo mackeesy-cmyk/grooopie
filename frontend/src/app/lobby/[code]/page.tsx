@@ -8,7 +8,7 @@ import ShareButton from '@/components/ShareButton';
 import { toast } from 'sonner';
 import { usePolling } from '@/hooks/usePolling';
 import { useAuth } from '@/context/AuthContext';
-import { getBusinessById, BusinessListing } from '@/data/businesses';
+import { getBusinessById } from '@/data/businesses';
 
 // ============================================================================
 // Typer
@@ -521,7 +521,7 @@ const JoinGate: React.FC<JoinGateProps> = ({
 export default function LobbyPage() {
     const params = useParams();
     const router = useRouter();
-    const { user, logout, login, isAuthenticated } = useAuth();
+    const { user, logout, isAuthenticated } = useAuth();
     const lobbyCode = (params.code as string)?.toUpperCase();
 
     const [lobby, setLobby] = useState<LobbyData | null>(null);
@@ -679,7 +679,7 @@ export default function LobbyPage() {
                 businessName={business?.name}
                 isLoggedIn={isAuthenticated}
                 userName={user?.name}
-                onJoinSuccess={(name) => {
+                onJoinSuccess={(_name) => {
                     setHasJoined(true);
                     // Refetch lobby data to get updated members list
                     fetchLobbyData();
