@@ -10,9 +10,9 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy import func
 from sqlalchemy.orm import Session, joinedload
 
-from database import get_db
-from models import Lobby, LobbyMember, Activity, TimeSlot, DiscountTier, User, LobbyStatus
-from schemas import (
+from ..database import get_db
+from ..models import Lobby, LobbyMember, Activity, TimeSlot, DiscountTier, User, LobbyStatus
+from ..schemas import (
     LobbyDetailResponse,
     LobbyBasic,
     ActivityResponse,

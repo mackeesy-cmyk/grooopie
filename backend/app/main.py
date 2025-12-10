@@ -9,9 +9,9 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from db_models import create_db_and_tables
-from routers import businesses, merchant
-from routers import lobbies_db as lobbies  # Use database-backed lobbies
+from .db_models import create_db_and_tables
+from .routers import businesses, merchant
+from .routers import lobbies_db as lobbies  # Use database-backed lobbies
 
 
 # Lifespan handler for startup/shutdown

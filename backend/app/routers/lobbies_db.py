@@ -12,7 +12,7 @@ from fastapi import APIRouter, HTTPException, Depends
 from pydantic import BaseModel
 from sqlmodel import Session, select
 
-from db_models import Lobby, LobbyMember, engine, get_session, create_db_and_tables
+from ..db_models import Lobby, LobbyMember, engine, get_session, create_db_and_tables
 
 router = APIRouter(prefix="/lobbies", tags=["lobbies"])
 
