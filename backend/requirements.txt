@@ -1,16 +1,15 @@
-# Groupie API Dependencies
-
-# Web framework
-fastapi>=0.104.0
-uvicorn[standard]>=0.24.0
-
-# Database
-sqlalchemy>=2.0.0
-psycopg2-binary>=2.9.9
-alembic>=1.12.0
-
-# Validation
-pydantic>=2.5.0
-
-# Utilities
-python-dotenv>=1.0.0
+annotated-doc==0.0.4
+annotated-types==0.7.0
+anyio==4.12.0
+click==8.3.1
+fastapi==0.124.0
+h11==0.16.0
+idna==3.11
+pydantic==2.12.5
+pydantic_core==2.41.5
+SQLAlchemy==2.0.44
+sqlmodel==0.0.27
+starlette==0.50.0
+typing-inspection==0.4.2
+typing_extensions==4.15.0
+uvicorn==0.38.0
