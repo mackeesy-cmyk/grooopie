@@ -3,6 +3,9 @@ Groupie - SQLModel Database Models
 Simplified models for SQLite local development.
 """
 
+from dotenv import load_dotenv
+load_dotenv()  # Load .env file before reading environment variables
+
 from datetime import datetime, timezone, timedelta
 from typing import Optional, List
 from sqlmodel import SQLModel, Field, Relationship, create_engine, Session
